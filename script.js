@@ -32,11 +32,15 @@
     `<polygon points="0,-20 18,12 -18,12" fill="${c}" stroke="${c}" stroke-width="12" stroke-linejoin="round"/></svg>`
   ).join("");
 
+  const menu = document.getElementById("menu"), menuConfetti = document.getElementById("menu-confetti");
+  if (menu) menu.classList.add("js");
+  if (menuConfetti) menuConfetti.innerHTML = document.getElementById("confetti").innerHTML;
+
   // wordmark letters hop in one by one
   const word = document.getElementById("sig-word");
   word.innerHTML = [...word.textContent].map((ch, k) => `<span class="ch" style="--k:${k}">${ch}</span>`).join("");
 
-  const targets = [section, ...section.querySelectorAll(".flavor"), document.getElementById("topping")];
+  const targets = [section, ...section.querySelectorAll(".flavor"), document.getElementById("topping"), menu].filter(Boolean);
   const show = (el) => el.classList.add("in");
   const reset = (el) => el.classList.remove("in");
 

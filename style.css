@@ -438,3 +438,63 @@ html { scroll-behavior: smooth; }
   .sig-js .signature:not(.in) .drips .d { transform: none; }
   .swirls path { stroke-dashoffset: 0; }
 }
+
+/* ---------- OUR MENU (price list) ---------- */
+.ourmenu {
+  --pink: #C4739A; --pink-dark: #A5577E;
+  flex: none;
+  background: #F7F0DA;
+  color: #4A1528;
+  font-family: "Fredoka", "Arial Rounded MT Bold", system-ui, sans-serif;
+  font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+}
+.ourmenu h2 {
+  margin: 0; padding: clamp(40px, 7vw, 72px) var(--gutter) clamp(24px, 4vw, 40px);
+  text-align: center; line-height: 1;
+  font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 10vw, 6rem);
+  text-shadow: 0 4px 0 var(--pink), 0 0 18px #fff;
+}
+.series { columns: 2 320px; column-gap: 20px; max-width: 980px; margin: 0 auto; padding: 0 var(--gutter) clamp(32px, 5vw, 56px); }
+.series table {
+  width: 100%; margin: 0 0 20px; break-inside: avoid;
+  border-collapse: collapse;
+  background: #ffffffb3; border-radius: 16px; box-shadow: 0 4px 14px #4a152822;
+}
+.series th, .series td { padding: 9px 8px; text-align: center; white-space: nowrap; }
+.series th:first-child { padding-left: 18px; text-align: left; white-space: normal; width: 100%; }
+.series td:last-child, .series thead th:last-child { padding-right: 18px; }
+.series td { min-width: 3.2em; }
+.series thead th { padding-top: 14px; border-bottom: 3px solid var(--pink); font-size: .8rem; }
+.series thead th:first-child { font-size: clamp(1.15rem, 2.6vw, 1.45rem); }
+.series abbr { text-decoration: none; }
+.series tbody tr:last-child > * { padding-bottom: 14px; }
+.rec { display: inline-block; width: auto; height: 1.5em; vertical-align: -.4em; margin-left: 4px; }
+.moore {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;
+  padding: 22px max(var(--gutter), calc((100% - 940px) / 2));
+  background: linear-gradient(90deg, #8E456B, var(--pink-dark)); color: #fff;
+}
+.moore h3 { margin: 0 0 4px; font-size: 1.3rem; }
+.moore p { margin: 0; font-size: .9rem; }
+.moore b { font-size: 1.1rem; margin-right: 6px; }
+.moore .legend { padding: 8px 18px; border-radius: 14px; background: #ffffffd9; color: #4A1528; font-size: 1rem; }
+
+/* our menu: confetti, staggered entrance, wiggling cows, hover lift (reuses pop / moo / hop keyframes) */
+.ourmenu { position: relative; overflow: hidden; }
+.ourmenu h2, .series, .moore { position: relative; z-index: 1; }
+.series table { transition: transform .25s var(--ease-pop), box-shadow .25s ease; }
+@media (hover: hover) { .series table:hover { transform: translateY(-5px) rotate(-.6deg); box-shadow: 0 12px 24px #4a152833; } }
+.series .rec { animation: moo 3.4s ease-in-out infinite; transform-origin: 50% 90%; }
+.series tr:nth-child(even) .rec { animation-delay: -1.7s; }
+.ourmenu.in h2 { animation: hop .8s var(--ease-pop) backwards; }
+.ourmenu.in table { animation: pop .7s var(--ease-pop) backwards; }
+.ourmenu.in table:nth-child(2) { animation-delay: .08s; }
+.ourmenu.in table:nth-child(3) { animation-delay: .16s; }
+.ourmenu.in table:nth-child(4) { animation-delay: .24s; }
+.ourmenu.in table:nth-child(5) { animation-delay: .32s; }
+.ourmenu.in table:nth-child(6) { animation-delay: .4s; }
+.ourmenu.js:not(.in) h2, .ourmenu.js:not(.in) table { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .ourmenu * { animation: none !important; transition: none !important; }
+  .ourmenu.js:not(.in) h2, .ourmenu.js:not(.in) table { opacity: 1; }
+}

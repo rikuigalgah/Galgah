@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Fredoka:wght@500;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&amp;display=swap">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+<link rel="stylesheet" href="style.css?v=2">
+<script src="script.js?v=2" defer></script>
 </head>
 <body>
 <section class="stage" id="top" aria-roledescription="carousel" aria-label="Menu minuman Galgah">
@@ -40,9 +40,9 @@
       </span>
       <span class="brand-word">GALGAH</span>
     </a>
-    <a class="menu-link" href="#signature">
+    <a class="menu-link" href="#menu" aria-label="Menu &amp; Harga">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11m0 0-4.5-4.5M8 13l4.5-4.5" stroke="#161213" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Menu Es Krim</span>
+      <span>Menu &amp; Harga</span>
     </a>
   </header>
 
@@ -70,6 +70,65 @@
       </button>
     </div>
   </nav>
+</section>
+
+<section class="ourmenu" id="menu" aria-labelledby="menu-title">
+  <div class="confetti" id="menu-confetti" aria-hidden="true"></div>
+  <h2 id="menu-title">Our Menu</h2>
+  <div class="series">
+    <table>
+      <thead><tr><th scope="col">Basic Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Pure Milk <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>8K</td><td>10K</td></tr>
+        <tr><th scope="row">Strawberry Delight</th><td>10K</td><td>14K</td></tr>
+        <tr><th scope="row">Rich Choco <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>10K</td><td>14K</td></tr>
+        <tr><th scope="row">Vanilla Delight</th><td>10K</td><td>14K</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th scope="col">Special Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Susu Kopi</th><td>15K</td><td>18K</td></tr>
+        <tr><th scope="row">Kukubima</th><td>14K</td><td>–</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th scope="col">Reserve Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Cocoa Reserve <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>–</td><td>16K</td></tr>
+        <tr><th scope="row">Strawberry Reserve</th><td>–</td><td>16K</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th scope="col">Tea Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Thai Tea</th><td>14K</td><td>16K</td></tr>
+        <tr><th scope="row">Green Tea <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>14K</td><td>16K</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th scope="col">Salt Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Seasalt <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>10K</td><td>12K</td></tr>
+        <tr><th scope="row">Garam Madu <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>16K</td><td>20K</td></tr>
+        <tr><th scope="row">Salted Caramel</th><td>16K</td><td>18K</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead><tr><th scope="col">Cookie Series</th><th scope="col"><abbr title="Regular">R</abbr></th><th scope="col"><abbr title="Large">L</abbr></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Oreo <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>14K</td><td>18K</td></tr>
+        <tr><th scope="row">Marie Regal</th><td>14K</td><td>18K</td></tr>
+        <tr><th scope="row">Lotus Biscoff <img class="rec" src="img/sig-cow.webp" alt="Recommended" width="221" height="177"></th><td>20K</td><td>–</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="moore">
+    <div><h3>Make it Moo-re</h3>
+      <p><b>Oatmilk</b> Regular +2K · Large +4K</p>
+      <p><b>Coffee</b> +4K</p></div>
+    <p class="legend"><img class="rec" src="img/sig-cow.webp" alt="" width="221" height="177"> = Recommended!</p>
+  </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
